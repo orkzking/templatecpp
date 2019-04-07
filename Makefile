@@ -49,21 +49,21 @@ else
 endif
 
 $(TARGET): $(OBJECTS)
-  @mkdir -p $(TARGETDIR)
-  @echo "Linking..."
-  @echo "  Linking $(TARGET)"; $(CC) $^ -o $(TARGET) $(LIB)
+	@mkdir -p $(TARGETDIR)
+	@echo "Linking..."
+	@echo "  Linking $(TARGET)"; $(CC) $^ -o $(TARGET) $(LIB)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
-  @mkdir -p $(BUILDLIST)
-  @echo "Compiling $<..."; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
+	@mkdir -p $(BUILDLIST)
+	@echo "Compiling $<..."; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 clean:
-  @echo "Cleaning $(TARGET)..."; $(RM) -r $(BUILDDIR) $(TARGET)
+	@echo "Cleaning $(TARGET)..."; $(RM) -r $(BUILDDIR) $(TARGET)
 
 install:
-  @echo "Installing $(EXECUTABLE)..."; cp $(TARGET) $(INSTALLBINDIR)
+	@echo "Installing $(EXECUTABLE)..."; cp $(TARGET) $(INSTALLBINDIR)
   
 distclean:
-  @echo "Removing $(EXECUTABLE)"; rm $(INSTALLBINDIR)/$(EXECUTABLE)
+	@echo "Removing $(EXECUTABLE)"; rm $(INSTALLBINDIR)/$(EXECUTABLE)
 
 .PHONY: clean
