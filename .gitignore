@@ -1,9 +1,12 @@
 # Ignore the build and lib dirs
 build/*
+!build/README*
 lib/*
+!lib/README*
 
 # Ignore any executables
 bin/*
+!bin/README*
 
 # Ignore Mac specific files
 .DS_Store
