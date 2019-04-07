@@ -1,0 +1,17 @@
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://gitlab.com/pages/doxygen
+image: alpine
+
+pages:
+  script:
+  - apk update && apk add doxygen
+  - doxygen doc/Doxyfile
+#  - git checkout gh-pages
+  - mv doc/html/ public/
+#  - git add .
+#  - git commit -m "scripted update of documentation"
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
