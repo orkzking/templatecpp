@@ -9,4 +9,4 @@ bin/*
 .DS_Store
 
 # Ignore files in docs for scripted documentation ppublishing
-doc/*
+doc/html/*

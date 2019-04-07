@@ -1,4 +1,5 @@
 /**
+ * @mainpage
  * @author: Thomas Reinirkens
  * @version: look in git
  * 
