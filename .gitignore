@@ -1,12 +1,12 @@
 # Ignore the build and lib dirs
 build/*
-!build/README*
+#!build/README*
 lib/*
-!lib/README*
+#!lib/README*
 
 # Ignore any executables
 bin/*
-!bin/README*
+#!bin/README*
 
 # Ignore Mac specific files
 .DS_Store
@@ -16,3 +16,9 @@ doc/html/*
 
 # Ignore back up files
 *.bak
+
+# Ignore all source code related files
+src/*
+include/*
+tests/*
+Makefile
