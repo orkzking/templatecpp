@@ -4,6 +4,7 @@ UNAME_S := $(shell uname -s)
 # CC
 ifeq ($(UNAME_S),Darwin)
   CC := clang++ -arch x86_64
+  @echo "Building with $(CC)"
 else
   CC := g++
 endif
@@ -14,7 +15,7 @@ BUILDDIR := build
 TARGETDIR := bin
 
 # Targets
-EXECUTABLE := SantaCruzServer
+EXECUTABLE := template
 TARGET := $(TARGETDIR)/$(EXECUTABLE)
 
 # Final Paths
@@ -34,7 +35,7 @@ BUILDLIST := $(patsubst include/%,$(BUILDDIR)/%,$(INCDIRS))
 # Shared Compiler Flags
 CFLAGS := -c
 INC := -I include $(INCLIST) -I /usr/local/include
-LIB := -L /usr/local/lib -lsantacruzengine -lsantacruzlib -larcadia -lcorinth -lyaml-cpp -lzmq -lhiredis -lbondoas
+LIB := -L /usr/local/lib #-lsantacruzengine -lsantacruzlib -larcadia -lcorinth -lyaml-cpp -lzmq -lhiredis -lbondoas
 
 # Platform Specific Compiler Flags
 ifeq ($(UNAME_S),Linux)
@@ -54,6 +55,7 @@ $(TARGET): $(OBJECTS)
 	@echo "  Linking $(TARGET)"; $(CC) $^ -o $(TARGET) $(LIB)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
+	@echo "Building with $(CC)"
 	@mkdir -p $(BUILDLIST)
 	@echo "Compiling $<..."; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
