@@ -16,3 +16,6 @@ doc/html/*
 
 # Ignore back up files
 *.bak
+
+# Ignore vs code dir
+.vscode/*
