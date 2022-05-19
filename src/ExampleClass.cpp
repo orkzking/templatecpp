@@ -20,6 +20,6 @@ void ExampleClass::DoNothing() {
     // TODO: implement stuff
 }
 
-void* ExampleClass::VeryUsefulMethod(bool level) {
+void ExampleClass::VeryUsefulMethod(bool level) {
     // TODO: implement stuff
 }

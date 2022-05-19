@@ -60,7 +60,7 @@ public:
       * And returns exceptionally useful results.
       * Use it everyday with good health.
       */
-    void* VeryUsefulMethod(bool level);
+    void VeryUsefulMethod(bool level);
 
 private:
 
