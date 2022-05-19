@@ -19,3 +19,6 @@ doc/html/*
 
 # Ignore vs code dir
 .vscode/*
+
+# Ignore vs2022 dir
+.vs/*
