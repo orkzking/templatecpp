@@ -20,6 +20,8 @@ void ExampleClass::DoNothing() {
     // TODO: implement stuff
 }
 
+#ifndef WIN32
 void* ExampleClass::VeryUsefulMethod(bool level) {
     // TODO: implement stuff
 }
+#endif
