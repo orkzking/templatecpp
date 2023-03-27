@@ -10,6 +10,10 @@
 
  #include "ExampleClass.h"
 
- int main() {
-     return 0;
- }
+int main() {
+    ExampleClass exampleObject = ExampleClass();
+
+    exampleObject.DoSomething();
+
+    return 0;
+}

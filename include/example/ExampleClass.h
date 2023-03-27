@@ -65,7 +65,9 @@ public:
 private:
 
     const char* fQuestion; ///< the question
-    int fAnswer;           ///< the answer 
+    int fAnswer;           ///< the answer
+    int fnumberA;          ///< intern number A
+    float fnumberB;        ///< intern number B
 
 };                              // end of class ExampleClass
 

@@ -1,7 +1,12 @@
 #include "ExampleClass.h"
+#include <iostream>
+
+using namespace std;
 
 ExampleClass::ExampleClass() {
     // TODO: implement stuff
+    fnumberA = 42;
+    fnumberB = 13.37;
 }
 
 ExampleClass::~ExampleClass() {
@@ -10,10 +15,13 @@ ExampleClass::~ExampleClass() {
 
 ExampleClass::ExampleClass(int a, float b) {
     // TODO: implement stuff
+    fnumberA = a;
+    fnumberB = b;
 }
 
 void ExampleClass::DoSomething() {
     // TODO: implement stuff
+    cout << "A is " << fnumberA << " and B is " << fnumberB;
 }
 
 void ExampleClass::DoNothing() {
