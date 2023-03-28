@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen
       - name: Run Doxygen
         run: doxygen doc/Doxyfile
       - name: Commit to other branch
