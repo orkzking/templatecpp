@@ -35,7 +35,7 @@ jobs:
         run: |
           git config --global user.name 'Git bot'
           git config --global user.email 'bot@noreply.github.com'
-          git checkout gh-pages
+          git checkout --progress --force -B master refs/remotes/origin/gh-pages
           git add doc/html/*
           git commit -m 'Automatic Update of Documantation' && git push || echo "No changes to commit"
           
