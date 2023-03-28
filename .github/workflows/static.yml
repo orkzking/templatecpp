@@ -22,25 +22,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: '0'
-      - name: Install Doxygen
-        run: sudo apt-get install doxygen
-      - name: Run Doxygen
-        run: doxygen doc/Doxyfile
-      - name: Commit to other branch
-        run: |
-          git config --global user.name 'Git bot'
-          git config --global user.email 'bot@noreply.github.com'
-          git checkout --progress --force -B gh-pages refs/remotes/origin/gh-pages
-          mv doc/html public
-          git add public/*
-          git commit -m 'Automatic Update of Documantation' && git push || echo "No changes to commit"
+  #build:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: Checkout
+  #      uses: actions/checkout@v3
+  #      with:
+  #        fetch-depth: '0'
+  #    - name: Install Doxygen
+  #      run: sudo apt-get install doxygen
+  #    - name: Run Doxygen
+  #      run: doxygen doc/Doxyfile
+  #    - name: Commit to other branch
+  #      run: |
+  #        git config --global user.name 'Git bot'
+  #        git config --global user.email 'bot@noreply.github.com'
+  #        git checkout --progress --force -B gh-pages refs/remotes/origin/gh-pages
+  #        mv doc/html public
+  #        git add public/*
+  #        git commit -m 'Automatic Update of Documantation' && git push || echo "No changes to commit"
           
   # Single deploy job since we're just deploying
   deploy:
@@ -51,6 +51,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen
+      - name: Run Doxygen
+        run: doxygen doc/Doxyfile
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
