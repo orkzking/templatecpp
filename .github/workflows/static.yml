@@ -38,7 +38,8 @@ jobs:
           git config --global user.name 'Git bot'
           git config --global user.email 'bot@noreply.github.com'
           git checkout --progress --force -B gh-pages refs/remotes/origin/gh-pages
-          git add doc/html/*
+          mv -r doc/html public
+          git add public/*
           git commit -m 'Automatic Update of Documantation' && git push || echo "No changes to commit"
           
   # Single deploy job since we're just deploying
