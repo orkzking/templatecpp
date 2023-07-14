@@ -60,7 +60,7 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@echo "Compiling $<..."; $(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 clean:
-	@echo "Cleaning $(TARGET)..."; $(RM) -r $(BUILDDIR) $(TARGET)
+	@echo "Cleaning $(TARGET)..."; $(RM) -r $(BUILDDIR)/*.o $(TARGET)
 
 install:
 	@echo "Installing $(EXECUTABLE)..."; cp $(TARGET) $(INSTALLBINDIR)
